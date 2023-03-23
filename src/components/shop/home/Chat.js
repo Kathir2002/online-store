@@ -4,7 +4,6 @@ import './Chat.css'
 import Navber from "../partials/Navber"
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
-import { Footer } from "../partials";
 dotenv.config()
 
 const API_KEY = process.env.REACT_APP_OPEN_AI_API_KEY;
@@ -54,10 +53,6 @@ function Chat() {
             return { role: role, content: messageObject.message }
         });
 
-
-        // Get the request body set up with the model we plan to use
-        // and the messages which we formatted above. We add a system message in the front to'
-        // determine how we want chatGPT to act. 
         const apiRequestBody = {
             "model": "gpt-3.5-turbo",
             "messages": [
@@ -88,7 +83,7 @@ function Chat() {
         <>
             <Navber />
             <div className="App">
-                <div style={{ position: "relative", height: "650px", width: "70%" }}>
+                <div style={{ position: "relative", height: "100vh", width: "70%" }}>
                     <MainContainer>
                         <ChatContainer>
                             <MessageList
@@ -105,7 +100,6 @@ function Chat() {
                     </MainContainer>
                 </div>
             </div>
-            <Footer />
         </>
     )
 }
