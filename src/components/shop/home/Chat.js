@@ -83,7 +83,7 @@ function Chat() {
         <>
             <Navber />
             <div className="App">
-                <div style={{ position: "relative", height: "100vh", width: "70%" }}>
+                <div style={{ position: "relative", height: "70vh", width: "70%" }}>
                     <MainContainer>
                         <ChatContainer>
                             <MessageList
@@ -95,7 +95,7 @@ function Chat() {
                                     return <Message key={i} model={message} />
                                 })}
                             </MessageList>
-                            <MessageInput placeholder="Type message here" onSend={handleSend} />
+                            <MessageInput placeholder="Type here" onSend={handleSend} />
                         </ChatContainer>
                     </MainContainer>
                 </div>
